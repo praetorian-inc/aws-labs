@@ -1,0 +1,27 @@
+        {
+            "Arn": "arn:aws:iam::111111111111:group/PowerUsers-marketing-group",
+            "AttachedManagedPolicies": [
+                {
+                    "PolicyArn": "arn:aws:iam::aws:policy/AWSLambdaFullAccess",
+                    "PolicyName": "AWSLambdaFullAccess"
+                }
+            ],
+            "CreateDate": "2012-12-20T16:20:10+00:00",
+            "GroupId": "AGPAJNZACMXXXXXXXXXX",
+            "GroupName": "owerUsers-marketing-group",
+            "GroupPolicyList": [
+                {
+                    "PolicyDocument": {
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "NotAction": "iam:*",
+                                "Resource": "*"
+                            }
+                        ]
+                    },
+                    "PolicyName": "PowerUserAccess-marketing-2012122000000"
+                }
+            ],
+            "Path": "/"
+        }
