@@ -1,5 +1,8 @@
 # LAB_1_Lambda_Power_Users
 
+
+## Part I: Diagnosing and Exploiting the Problem
+
 This lab examines a real-word issue discovered on a cloud pen test.
 Devops had wanted to restrict the marketing team from privilege escalation by disallowing `iam:*` actions.
 
@@ -56,12 +59,23 @@ create a lambda function with a high-privileged role to elevate dave's own privi
    ./kingme.sh
 
 
+## Part II: Fixing the Problem (WIP)
+
 Now comes the hard part. How do we accomplish what the Devops team had intended? Allow the marketing power users as
 much freedom as possible (at least as much control over Lambda as possible) without giving them a path to privilege escalate to Admin?
 
-Options:
+### Options
 
 * Permissions Boundary
 * Explicit Deny
 * Whitelist Passrole Resources
 * Separate AWS account where marketing is admin + CI/CD to publish into existing account
+
+
+
+## TODO
+
+* Change the group privileges to only allow assume-role and push all privs into that group role, following best practices.
+* Replace all hard-coded random sequences with $RANDOM or similar.
+* Develop the "How to Fix" options.
+* Add cleanup instrutions.
