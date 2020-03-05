@@ -1,0 +1,10 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AssumeRolePolicyForS3ReaderRoleByExternal",
+      "Effect": "Allow",
+      "Principal": {"AWS": ["arn:aws:iam::444455556666:root","arn:aws:iam::444455556666:user/s3tester1-session_random"]},
+      "Action": "sts:AssumeRole"
+    }]
+}

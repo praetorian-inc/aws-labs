@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "AssumeRolePolicyForS3ReaderRole",
+    "Effect": "Allow",
+    "Principal": {"AWS": "arn:aws:iam::279038159887:root"},
+    "Action": "sts:AssumeRole"
+
+    },
+    {
+      "Sid": "AssumeRolePolicyForS3ReaderRoleByExternal",
+      "Effect": "Allow",
+      "Principal": {"AWS": ["arn:aws:iam::057011330707:root","arn:aws:iam::057011330707:role/s3tester1-role-109319"]},
+      "Action": "sts:AssumeRole",
+      "Condition": {"StringEquals": {"sts:ExternalId": "immutable-external-ID-issued-by-external-account"}}
+
+    }]
+}

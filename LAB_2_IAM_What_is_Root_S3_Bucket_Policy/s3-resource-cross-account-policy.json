@@ -1,0 +1,20 @@
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Sid":"AddCrossAccountPutPolicy",
+      "Effect":"Allow",
+      "Principal": {"AWS": ["arn:aws:iam::279038159887:root","arn:aws:iam::057011330707:root"]},
+      "Action":["s3:PutObject","s3:GetObject","s3:ListBucket"],
+      "Resource":["arn:aws:s3:::mybucket-17290-13659/*", "arn:aws:s3:::mybucket-17290-13659"],
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": [
+            "35.196.215.192/32",
+            "10.10.10.10/32"
+          ]
+        }
+      }
+    }
+  ]
+}

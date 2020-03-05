@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowRestrictedPrefixReadWrite",
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*",
+        "s3:List*",
+        "s3:Put*"
+      ],
+      "Resource": "arn:aws:s3:::mybucket/allow-rw-mybucket-folder-role/*"
+    },
+    {
+      "Sid": "AllowReadOnlyOnBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": "arn:aws:s3:::mybucket"
+    }
+  ]
+}

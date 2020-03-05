@@ -1,0 +1,12 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": [
+          "sts:PutIamPolicy"
+        ],
+        "Effect": "Allow",
+        "Resource": "arn:aws:iam::*:role/global_app_monitor"
+      }
+    ]
+}

@@ -1,0 +1,19 @@
+# sprinkle-ins are workds that might get inserted anywher
+# in a role name. Like aws_priv_s3_prod.
+priv
+aws
+p
+prod
+production
+d
+dev
+devel
+develop
+development
+s
+stage
+staging
+stg
+svc
+service
+srv

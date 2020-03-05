@@ -1,0 +1,17 @@
+
+{
+    "RoleName": "global_app_monitor",
+    "AssumeRolePolicyDocument": {
+        "Statement":  [
+          {
+            "Action": "sts:AssumeRole",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::057011330707:role/core_app_monitor"
+            },
+            "Sid": "globalAppMonAssumeRole"
+          }
+        ],
+        "Version":  "2012-10-17"
+    }
+}
