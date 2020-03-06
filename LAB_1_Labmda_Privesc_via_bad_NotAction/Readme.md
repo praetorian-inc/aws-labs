@@ -1,5 +1,9 @@
 # LAB_1_Lambda_Power_Users
 
+This lab covers a scenario which simulates the following scenario:
+
+* An attacker disovers user credentials for marketing-dave which allows lambda management.
+* Due to a flaw in the policy intended to restrict marketing-dave's the attacker can priv-esc to admin by launching a lambda with high privileges.
 
 ## Part I: Diagnosing and Exploiting the Problem
 
