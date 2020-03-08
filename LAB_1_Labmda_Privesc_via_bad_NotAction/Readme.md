@@ -4,6 +4,7 @@ This lab covers a scenario which simulates the following scenario:
 
 * An attacker disovers user credentials for marketing-dave which allows lambda management.
 * Due to a flaw in the policy intended to restrict marketing-dave's the attacker can priv-esc to admin by launching a lambda with high privileges.
+* Discovers a secret in an S3 bucket after granting themselves S3 privileges to modify bucket policies
 
 ## Part I: Diagnosing and Exploiting the Problem
 
@@ -62,6 +63,10 @@ create a lambda function with a high-privileged role to elevate dave's own privi
 3. Using dave's credentials, create the lambda function using the `discovered_role_with_iam_privs` role
    ./kingme.sh
 
+4. Once you are king (IAM boss), you can give yourself S3 Full Access privileges. Then you can list buckets.
+You will need to [change the bucket IAM policy](https://aws.amazon.com/blogs/security/how-to-restrict-amazon-s3-bucket-access-to-a-specific-iam-role/) 
+to grant yourself access to the bucket.
+
 
 ## Part II: Fixing the Problem (WIP)
 
@@ -79,7 +84,8 @@ much freedom as possible (at least as much control over Lambda as possible) with
 
 ## TODO
 
-* Change the group privileges to only allow assume-role and push all privs into that group role, following best practices.
-* Replace all hard-coded random sequences with $RANDOM or similar.
-* Develop the "How to Fix" options.
-* Add cleanup instrutions.
+[] Change the group privileges to only allow assume-role and push all privs into that group role, following best practices.
+[] Design a version of the Lab so that the priv-esc is only to read a CTF hash in S3, not become admin.
+[-] Replace all hard-coded random sequences with $RANDOM or similar.
+[] Develop the "How to Fix" options.
+[-] Add cleanup instrutions.
