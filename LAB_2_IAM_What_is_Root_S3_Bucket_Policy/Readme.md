@@ -1,18 +1,30 @@
-# What permissions does the AWS ARN "root" grant?
+# What is Root?
+
+In particular, what does the following mean when used as the principal in an IAM resource policy?
+
+```
+"Principal": {"AWS": ["arn:aws:iam::111122223333:root]}
+```
 
 ## Introduction
 This lab examines the difference between IAM vs AWS Resource based policies. In particular, we seek to understand the
 policy evaluation logic for S3 buckets with cross account access. For a refresher on IAM basics, see
-https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html.
+[Reference Policies Evaluation Logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)
+which is valid for when the IAM Principal and S3 Resource are in the same AWS account. 
 
 To summarize the above, if an action is allowed by an identity-based policy, a resource-based policy, or both, then 
 AWS allows the action. An explicit deny in either of these policies overrides the allow.
 
+The situation changes for [cross account access](https://aws.amazon.com/premiumsupport/knowledge-center/cross-account-access-s3/). 
+In this case, access must be explicitly allowed in both
+the picincipal's AWS access policy and the resource policy. Unfortunately, the latter reference does not
+mention the confused deputy issue for cross-account access which occurs when the trusted account is a
+3rd party SaaS vendor. As a result, many vendors which operate on customer's S3 buckets do so insecurely.
 
-Granting permissions to principals in an external AWS account requires adding statements like the following 
-in a role's assume-role trust policy.
+For this lab, we will assume both AWS accounts are owned by the same entity and will leave confused deputy 
+issues for Lab 4. Granting permissions to principals in an external AWS account can be done via two methods -
+Direct Access and Assume Role.
 
-"Principal":{"AWS":"arn:aws:iam::AccountNumber-WithoutHyphens:root"}
 
 Alternatively, cross-account access could be granted in a resource policy such as the following bucket policy.
 
@@ -38,6 +50,20 @@ demo-policy.json
       }
     ]
   }
+```
+
+Quesitons:
+
+* Can we modify Bucket Policies from non-whitelisted IPs (control plane, not data plane commands)?
+
+
+### Assume Role
+Assume Role access requires adding statements 
+like the following in a role's assume-role trust policy.
+
+IAM Role Assume-Role Trust Policy
+```
+"Principal":{"AWS":"arn:aws:iam::AWSTargetAccountID:root"}
 ```
 
 ## Setup
