@@ -83,9 +83,8 @@ much freedom as possible (at least as much control over Lambda as possible) with
 
 
 ## TODO
-
-[] Change the group privileges to only allow assume-role and push all privs into that group role, following best practices.
-[] Design a version of the Lab so that the priv-esc is only to read a CTF hash in S3, not become admin.
-[-] Replace all hard-coded random sequences with $RANDOM or similar.
-[] Develop the "How to Fix" options.
-[-] Add cleanup instrutions.
+- [x] Add cleanup instrutions.
+- [x] Replace all hard-coded random sequences with $RANDOM or similar. 
+- [] Change the group privileges to only allow assume-role and push all privs into that group role, following best practices.
+- [] Design a version of the Lab so that the priv-esc is only to read a CTF hash in S3, not become admin.
+- [] Develop the "How to Fix" options.
