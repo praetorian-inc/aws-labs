@@ -1,0 +1,4 @@
+internal_account=111122223333
+external account=444455556666
+cidr_1=54.240.143.0/24
+cidr_2=54.240.144.0/24

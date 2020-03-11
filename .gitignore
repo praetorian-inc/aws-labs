@@ -1,2 +1,11 @@
 keys.json
-
+.terraform/
+main.tf
+vars.txt
+policy.json
+.idea/
+.DS_Store
+temp_core_creds
+temp_global_app_mon_creds
+terraform.tfstate
+flag
