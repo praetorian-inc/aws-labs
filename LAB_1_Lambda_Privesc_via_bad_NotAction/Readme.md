@@ -1,10 +1,10 @@
-# LAB_1_Lambda_Power_Users
+# LAB_1_Lambda_Privesc_via_bad_NotAction
 
-This lab covers a scenario which simulates the following scenario:
+This lab covers the following scenario:
 
 * An attacker disovers user credentials for marketing-dave which allows lambda management.
-* Due to a flaw in the policy intended to restrict marketing-dave's the attacker can priv-esc to admin by launching a lambda with high privileges.
-* Discovers a secret in an S3 bucket after granting themselves S3 privileges to modify bucket policies
+* Due to a flaw in the policy intended to restrict marketing-dave's ability to modify IAM privileges, the attacker can priv-esc to admin by launching a lambda with high privileges.
+* The attacker discovers a secret in an S3 bucket after granting themselves S3 privileges to modify bucket policies
 
 ## Part I: Diagnosing and Exploiting the Problem
 
