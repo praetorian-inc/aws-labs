@@ -1,0 +1,16 @@
+{
+    "Statement":  [
+    {
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::057011330707:user/core_monitor"
+      },
+      "Sid": "xxx"
+    }
+      ] ,
+      "Version":  "2012-10-17"
+    
+}

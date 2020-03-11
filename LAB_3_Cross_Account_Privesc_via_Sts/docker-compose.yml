@@ -1,0 +1,9 @@
+version: "3"
+services:
+  terraform:
+    image: hashicorp/terraform
+    volumes:
+      - ~/.aws/credentials:/root/.aws/credentials
+      - ${PWD}:/terraform
+    command: "tail -f /dev/null"
+    entrypoint: ""
